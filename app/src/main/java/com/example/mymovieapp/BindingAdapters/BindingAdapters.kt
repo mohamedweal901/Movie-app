@@ -5,6 +5,7 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.mymovieapp.adapters.BaseAdapter
 import com.example.mymovieapp.adapters.MovieAdapter
 import com.example.mymovieapp.model.data.Movie
 import com.example.mymovieapp.model.State
@@ -42,12 +43,12 @@ fun setImageFromUrl(imageView: ImageView,url:String?){
 }
 
 @BindingAdapter(value = ["app:items"])
-fun setRecyclerViewItems(view: RecyclerView, items:List<Movie>?){
+fun<T>setRecyclerViewItems(view: RecyclerView, items:List<T>?){
     if(items!=null) {
-        val adapter = view.adapter as MovieAdapter
+        val adapter = view.adapter as BaseAdapter<T>
         adapter.setItems(items)
     }else{
-        val adapter=view.adapter as MovieAdapter
+        val adapter=view.adapter as BaseAdapter<T>
         adapter.setItems(emptyList())
     }
 }
