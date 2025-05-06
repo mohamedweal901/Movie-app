@@ -1,2 +1,9 @@
-# Movie-app
-show popular movie from https://www.themoviedb.org/settings/api
+🎬 populaer Movie Application
+🚀 Tech stack
+xml
+MVVM
+Coroutines
+Data Binding
+Live Data
+Navigation
+📓 Resources (the chance course on youtube ) 
